@@ -1,8 +1,9 @@
 import React from "react";
-import { View, FlatList } from "react-native";
+import { View, FlatList, Button } from "react-native";
 import styles from "./styles";
 import data from "../../data/dataArrays";
 import MenuButton from "../../components/MenuButton/MenuButton";
+import { router } from "expo-router";
 
 const Menu = () => {
   return (

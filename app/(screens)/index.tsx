@@ -1,5 +1,5 @@
 import { Text, View, StyleSheet } from "react-native";
-import Menu from "./screens/Menu/Menu";
+import Menu from "./Menu/Menu";
 import { LinearGradient } from "expo-linear-gradient";
 import { SafeAreaView } from "react-native-safe-area-context";
 
