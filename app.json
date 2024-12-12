@@ -1,5 +1,7 @@
 {
   "expo": {
+    "plugins": ["expo-router"],
+    "scheme": "hydro-world",
     "name": "hydro-world",
     "slug": "hydro-world",
     "version": "1.0.0",
