@@ -8,6 +8,13 @@ export default function ScreensLayout() {
         options={{
           title: "Hydro World",
           contentStyle: { backgroundColor: "white" },
+          headerStyle: {
+            backgroundColor: "#012628",
+          },
+          headerTintColor: "#fff",
+          headerTitleStyle: {
+            fontWeight: "bold",
+          },
         }}
       />
       <Stack.Screen

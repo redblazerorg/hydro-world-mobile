@@ -13,6 +13,10 @@ import { AppDispatch, RootState } from "@/app/store/store";
 import { SpeciesSearchState } from "@/app/store/slice/hydro_slice";
 import { useGetCategoryQuery } from "@/app/store/slice/api/hydro_api_slice";
 import { SpeciesDetails } from "@/app/scheme/species_details";
+import GradientBackground from "@/app/components/gradient";
+import { Ionicons } from "@expo/vector-icons";
+
+import { ExampleTabScreen } from "@/app/components/tabbar";
 
 const Species = () => {
   const dispatch = useDispatch<AppDispatch>();
@@ -44,7 +48,7 @@ const Species = () => {
             fontSize: 20,
           }}
         >
-          Meals with the keyword: {keyword} is not found...
+          Hydro animals with the keyword: {keyword} is not found...
         </Text>
       </View>
     );
@@ -56,31 +60,76 @@ const Species = () => {
           flex: 1,
           justifyContent: "center",
           alignItems: "center",
-          backgroundColor: "white",
+          backgroundColor: "#012628",
         }}
       >
-        <ActivityIndicator size="large" color="pink" />
+        <ActivityIndicator size="large" color="white" />
       </View>
     );
 
   const width = Dimensions.get("window").width;
   const height = Dimensions.get("window").height;
 
+  // return <ExampleTabScreen />;
+
   return (
     <FlatList
       data={data?.data}
       renderItem={({ item }: { item: SpeciesDetails }) => (
-        <View>
-          <Image
+        <GradientBackground
+          style={{
+            padding: 10,
+            margin: 10,
+            borderRadius: 10,
+          }}
+        >
+          <View
             style={{
-              width: 100,
-              height: 100,
+              alignItems: "center",
             }}
-            source={{ uri: item.image_url }}
-          />
-          <Text>{item.common_name}</Text>
-          <Text>{item.description}</Text>
-        </View>
+          >
+            <Image
+              style={{
+                width: width * 0.8,
+                height: 200,
+              }}
+              source={{ uri: item.image_url }}
+            />
+            <Text
+              style={{
+                color: "white",
+              }}
+            >
+              {item.common_name}
+            </Text>
+            <Text
+              style={{
+                color: "white",
+              }}
+            >
+              {item.description}
+            </Text>
+
+            {/* <Ionicons
+              // onPress={{
+
+              // }}
+              style={{
+                position: "absolute",
+                right: 10,
+                bottom: 30,
+                backgroundColor: "#002e30",
+                borderRadius: 12,
+                padding: 3,
+                borderColor: "white",
+                borderWidth: 1,
+              }}
+              name="information"
+              size={24}
+              color="white"
+            /> */}
+          </View>
+        </GradientBackground>
       )}
       keyExtractor={(item) => item.id.toString()}
       showsVerticalScrollIndicator={false}
