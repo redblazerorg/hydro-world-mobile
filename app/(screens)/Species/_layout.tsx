@@ -10,7 +10,14 @@ const SearchLayout = () => {
         name="[keyword]"
         options={{
           title: keyword ? `Species - ${keyword}` : "Species",
-          contentStyle: { backgroundColor: "white" },
+          contentStyle: { backgroundColor: "#012628" },
+          headerStyle: {
+            backgroundColor: "#012628",
+          },
+          headerTintColor: "#fff",
+          headerTitleStyle: {
+            fontWeight: "bold",
+          },
           headerLeft: () => (
             <TouchableOpacity
               onPress={() => router.back()}
@@ -19,7 +26,7 @@ const SearchLayout = () => {
                 padding: 5,
               }}
             >
-              <Ionicons name="chevron-back-circle" size={24} color="#FF00BF" />
+              <Ionicons name="chevron-back-circle" size={24} color="white" />
             </TouchableOpacity>
           ),
         }}
